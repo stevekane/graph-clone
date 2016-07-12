@@ -38,13 +38,11 @@ function cloneWith (e, depth) {
   if ( map.has(e.objectId) )    return map.get(e.objectId)
 
   const out = Object.create(Object.getPrototypeOf(e))
-  const keys = Object.keys(out)
-  const oldId = e.objectId
 
   for (var key in e) {
     out[key] = key === 'objectId' ? UUID() : cloneWith(e[key], depth + 1)
   }
-  map.set(oldId, out)
+  map.set(e.objectId, out)
   return out
 }
 
