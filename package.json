@@ -1,17 +1,23 @@
 {
-  "name": "cloning",
+  "name": "graph-clone",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test"
   },
-  "keywords": [],
+  "keywords": [
+    "graph",
+    "traversal",
+    "clone"
+  ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "is-array": "^1.0.1",
-    "log-side-by-side": "^1.0.0",
+    "is-array": "^1.0.1"
+  },
+  "devDependencies": {
+    "log-side-by-side": "^1.1.0",
     "node-uuid": "^1.4.7",
     "tape": "^4.6.0"
   }
