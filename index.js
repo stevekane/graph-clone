@@ -9,12 +9,12 @@ function gMap (root, preserveFn, kvFn) {
   function visit (e) {
     if (!( e instanceof Object ) || preserveFn(e) ) return e
     if ( isArray(e) )                               return e.map(visit)
-    if ( set.has(e) )                               return map.get(e.objectId) || e
+    if ( set.has(e) )                               return map.get(e) || e
 
     const out = Object.create(Object.getPrototypeOf(e))
 
     set.add(e)
-    map.set(e.objectId, out)
+    map.set(e, out)
     for (var key in e) {
       out[key] = visit(kvFn(out, key, e[key]))
     }
