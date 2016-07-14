@@ -10,6 +10,7 @@ class Doc {
     this.nodes = nodes
     this.media = media
     this.selected = null
+    this.fn = function () { return 'dogs' }
   }
 }
 
@@ -73,5 +74,8 @@ test('copy is truly deepcloned', t => {
   t.true(e.nodes[0].stage.children[0].children[0].parent !== copy.nodes[0].stage.children[0].children[0].parent)
   t.true(e.nodes[0].stage.objectId !== copy.nodes[0].stage.objectId)
   t.true(e.nodes[0].media === copy.nodes[0].media)
+
+  // test fns
+  t.true(e.fn === copy.fn)
   t.end()
 })
