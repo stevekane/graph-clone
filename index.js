@@ -7,9 +7,9 @@ function gMap (root, preserveFn, kvFn) {
   var set = new Set
 
   function visit (e) {
-    if (e instanceof Function || !( e instanceof Object ) || preserveFn(e) ) return e
-    if ( isArray(e) )                                                        return e.map(visit)
-    if ( set.has(e) )                                                        return map.get(e) || e
+    if ( e instanceof Function || !( e instanceof Object ) || preserveFn(e) ) return e
+    if ( isArray(e) )                                                         return e.map(visit)
+    if ( set.has(e) )                                                         return map.get(e) || e
 
     const out = Object.create(Object.getPrototypeOf(e))
 

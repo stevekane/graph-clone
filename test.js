@@ -54,7 +54,6 @@ test('copy is truly deepcloned', t => {
   var a1 = new Asset
   var a2 = new Asset
 
-  //e.selected = e.nodes[0]
   a1.setParent(e.nodes[0].stage)
   a1.media = e.media[0]
   a2.setParent(a1)
