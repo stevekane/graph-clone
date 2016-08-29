@@ -11,7 +11,7 @@ function gMap (root, preserveFn, kvFn) {
     if ( isArray(e) )                                                         return e.map(visit)
     if ( set.has(e) )                                                         return map.get(e) || e
 
-    const out = Object.create(Object.getPrototypeOf(e))
+    var out = Object.create(Object.getPrototypeOf(e))
 
     set.add(e)
     map.set(e, out)
